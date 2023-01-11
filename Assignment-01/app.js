@@ -1,3 +1,4 @@
+
 // create and print h1 using js
 
 // const heading = document.createElement("h1");
