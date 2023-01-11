@@ -12,7 +12,7 @@ const heading1 = (
 );
 
 // React component
-// 1) Functional component
+// 1) Functional component - New method 
 // 2) Class based component
 
 const FirstComponent = () => {
