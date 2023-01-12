@@ -777,18 +777,21 @@ const burgerKing = {
     rating:"4.2"
 }
 
-const RestrurantCardList = (props) => {
+const RestrurantCardList = ({restaurant}) => {
+
+    const {name,cloudinaryImageId,deliveryTime,cuisines} =  restaurant.data;
 
     return(
         <>
         <div className="card">
           <div className="image">
             <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + 
-            props.restaurant.data?. cloudinaryImageId} />
+            cloudinaryImageId} />
           </div>
           <div className="desc">
-            <h3>{props.restaurant.data?. name}</h3>
-            <h4>{props.restaurant?. data.deliveryTime} minutes</h4>
+            <h3>{name}</h3>
+            <p>{cuisines.join(", ")}</p>
+            <h4>{deliveryTime} minutes</h4>
 
           </div>
 
