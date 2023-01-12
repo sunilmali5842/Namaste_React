@@ -808,9 +808,13 @@ const Body = () =>{
         <div className="container">
         <h3 className="text-center">Body Starts Here</h3>
           <div className="restraurant-section">
-          <RestrurantCardList cloudinaryImageId= {restraurantList[0].data.cloudinaryImageId} name= {restraurantList[0].data.name} cuisines = {restraurantList[0].data.cuisines} deliveryTime = {restraurantList[0].data.deliveryTime} />
-          <RestrurantCardList cloudinaryImageId= {restraurantList[1].data.cloudinaryImageId} name= {restraurantList[1].data.name} cuisines = {restraurantList[1].data.cuisines} deliveryTime = {restraurantList[1].data.deliveryTime} />
-          <RestrurantCardList cloudinaryImageId= {restraurantList[2].data.cloudinaryImageId} name= {restraurantList[2].data.name} cuisines = {restraurantList[2].data.cuisines} deliveryTime = {restraurantList[2].data.deliveryTime} />
+          <RestrurantCardList {...restraurantList[0].data} />
+          <RestrurantCardList {...restraurantList[1].data} />
+          <RestrurantCardList {...restraurantList[2].data} />
+          <RestrurantCardList {...restraurantList[3].data} />
+          <RestrurantCardList {...restraurantList[4].data} />
+          <RestrurantCardList {...restraurantList[5].data} />
+         
          
           </div>
 
