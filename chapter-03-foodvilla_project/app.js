@@ -777,9 +777,8 @@ const burgerKing = {
     rating:"4.2"
 }
 
-const RestrurantCardList = ({restaurant}) => {
+const RestrurantCardList = ({name,cloudinaryImageId,deliveryTime,cuisines}) => {
 
-    const {name,cloudinaryImageId,deliveryTime,cuisines} =  restaurant.data;
 
     return(
         <>
@@ -791,6 +790,7 @@ const RestrurantCardList = ({restaurant}) => {
           <div className="desc">
             <h3>{name}</h3>
             <p>{cuisines.join(", ")}</p>
+            
             <h4>{deliveryTime} minutes</h4>
 
           </div>
@@ -808,12 +808,10 @@ const Body = () =>{
         <div className="container">
         <h3 className="text-center">Body Starts Here</h3>
           <div className="restraurant-section">
-          <RestrurantCardList restaurant= {restraurantList[0]} />
-          <RestrurantCardList restaurant= {restraurantList[1]} />
-          <RestrurantCardList restaurant= {restraurantList[2]} />
-          <RestrurantCardList restaurant= {restraurantList[3]} />
-          <RestrurantCardList restaurant= {restraurantList[4]} />
-          <RestrurantCardList restaurant= {restraurantList[5]} />
+          <RestrurantCardList cloudinaryImageId= {restraurantList[0].data.cloudinaryImageId} name= {restraurantList[0].data.name} cuisines = {restraurantList[0].data.cuisines} deliveryTime = {restraurantList[0].data.deliveryTime} />
+          <RestrurantCardList cloudinaryImageId= {restraurantList[1].data.cloudinaryImageId} name= {restraurantList[1].data.name} cuisines = {restraurantList[1].data.cuisines} deliveryTime = {restraurantList[1].data.deliveryTime} />
+          <RestrurantCardList cloudinaryImageId= {restraurantList[2].data.cloudinaryImageId} name= {restraurantList[2].data.name} cuisines = {restraurantList[2].data.cuisines} deliveryTime = {restraurantList[2].data.deliveryTime} />
+         
           </div>
 
         </div>
