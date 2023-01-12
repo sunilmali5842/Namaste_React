@@ -770,12 +770,6 @@ const restraurantList = [
         },
 ];
 
-const burgerKing = {
-    name: "Burger King",
-    image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/r0j1bjyaco1xj40ywxzw.jpg",
-    cusines:["burgers","American"],
-    rating:"4.2"
-}
 
 const RestrurantCardList = ({name,cloudinaryImageId,deliveryTime,cuisines}) => {
 
@@ -806,14 +800,17 @@ const Body = () =>{
         
 
         <div className="container">
-        <h3 className="text-center">Body Starts Here</h3>
+        <h1 className="text-center">All Restaurants</h1>
           <div className="restraurant-section">
-          <RestrurantCardList {...restraurantList[0].data} />
-          <RestrurantCardList {...restraurantList[1].data} />
-          <RestrurantCardList {...restraurantList[2].data} />
-          <RestrurantCardList {...restraurantList[3].data} />
-          <RestrurantCardList {...restraurantList[4].data} />
-          <RestrurantCardList {...restraurantList[5].data} />
+
+          {
+              restraurantList.map((restraurant) => {
+                  return <RestrurantCardList {...restraurant.data} />
+                    
+                 
+              })
+          }
+          
          
          
           </div>
