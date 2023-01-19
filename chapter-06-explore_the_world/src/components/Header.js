@@ -11,15 +11,15 @@ const Title = () => {
 }
 
 
-
 const Header = () =>{
     
+    const [isLoggedIn,setIsLoggedIn] = useState(false);
     
     return (
      <div className="header">
        <Title/>
 
-     
+     {isLoggedIn}
        <ul className="navbar d-flex">
          <li><a href="/">Home</a></li>
          <li><a href="/">About</a></li>
@@ -28,6 +28,13 @@ const Header = () =>{
          <li><a href="/cart">CART</a></li>
  
        </ul>
+       <div className="authentication">
+       {
+           (isLoggedIn ? <button className="btn-danger" onClick={() => setIsLoggedIn(false)}>Log Out</button> : <button className="btn-primary" onClick={() => setIsLoggedIn(true)}>Log In</button>   )
+       }
+         
+         
+       </div>
      </div>
  );
  

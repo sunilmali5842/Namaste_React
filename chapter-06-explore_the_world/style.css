@@ -78,11 +78,18 @@ h1,h2,h3,h4,h5,h6,p{
    border:1px solid #ddd;
    border-radius: 0px !important;
 }
-.search-btn{
+.search-btn, .btn-primary{
     padding:10px 15px;
     color:#fff;
     background: green;
     border-color: green;
+    cursor: pointer;
+}
+.btn-danger{
+    padding:10px 15px;
+    color:#fff;
+    background: rgb(214, 22, 32);
+    border-color: rgb(214, 22, 32);
     cursor: pointer;
 }
 /* footer section css */
