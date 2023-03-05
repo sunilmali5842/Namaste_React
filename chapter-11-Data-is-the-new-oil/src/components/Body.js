@@ -1,13 +1,12 @@
-import React from "react";
+import React, {useState, useEffect,useContext} from "react";
 import ReactDOM from "react-dom/client";
 import {restraurantList} from "../constant";
 import RestaurantCard from "../components/RestaurantCard";
-import {useState, useEffect} from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
 import {filterData} from "../utils/helper";
 import useOnline from "../utils/useOnline";
-
+import UserContext from "../utils/UserContext"
 
 const Body = ({user}) =>{
 
@@ -15,7 +14,6 @@ const Body = ({user}) =>{
     const [allRestaurants,setAllRestaurants] = useState("");
     const [filteredRestaurants,setFilteredRestaurants] = useState("");
     const [searchInput, setSearchInput] = useState("");
-   
     // Empty dependecy array = Once after render
     // dep array [serachText] = Once after initial render + everytime after re-render i.e. when search text changes
 
@@ -74,6 +72,8 @@ const Body = ({user}) =>{
             
               
           }}>Search </button>
+
+          
         </div>
 
         <div className="container m-auto">

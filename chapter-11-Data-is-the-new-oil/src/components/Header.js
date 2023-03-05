@@ -1,10 +1,10 @@
-import {useState} from "react";
+import {useState,useContext} from "react";
 import{useEffect} from "react";
 import Logo from "../assets/images/logo.jpg";
 import {Link} from "react-router-dom";
 import useOnline from "../utils/useOnline"
 import isOnline from "../utils/useOnline";
-
+import UserContext from "../utils/UserContext"
 const Title = () => {
     return (
         <a href="/" className=""><img 
@@ -21,6 +21,8 @@ const Header = () =>{
     const [isLoggedIn,setIsLoggedIn] = useState(false);
 
     const isOnline = useOnline();
+
+    const {userInfo} = useContext(UserContext);
 
     useEffect(() => {
         
@@ -56,6 +58,7 @@ const Header = () =>{
          <li className="p-2"><Link class="uppercase hover:text-pink-600" to="/cart">CART</Link></li>
  
        </ul>
+       <span className="font-bold">{userInfo.name}</span>
        {
            (isOnline ? <div className="show-online bg-green-700 w-10 h-10 rounded-full max-[600px]:hidden"></div> : <div className="show-offline bg-red-700 w-40 rounded-full max-[600px]:hidden"></div>)
        }

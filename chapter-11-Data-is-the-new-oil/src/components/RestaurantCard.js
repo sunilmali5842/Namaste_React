@@ -1,7 +1,11 @@
+import React, { useContext } from "react";
+
 import { IMG_CDN_URL } from "../constant";
+import UserContext from "../utils/UserContext";
+
 const RestrurantCardList = ({name,cloudinaryImageId,deliveryTime,cuisines,user}) => {
 
-
+const {userInfo} = useContext(UserContext);
     return(
         <>
         
@@ -15,7 +19,7 @@ const RestrurantCardList = ({name,cloudinaryImageId,deliveryTime,cuisines,user})
             <p>{cuisines.join(", ")}</p>
             
             <h4>{deliveryTime} minutes</h4>
-            <h5>{user.name}</h5>
+            <h6>{userInfo.name} - {userInfo.email}</h6>
 
           </div>
 

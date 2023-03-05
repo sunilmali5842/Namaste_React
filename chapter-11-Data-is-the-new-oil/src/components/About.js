@@ -1,7 +1,8 @@
 import { Outlet} from "react-router-dom";
 import ProfileFunctionalComponent from "./Profile";
 import ProfileClass from "./ProfileClass";
-import React from "react";
+import React, {Component} from "react";
+import UserContext from "../utils/UserContext";
 
 class About extends React.Component{
 
@@ -30,6 +31,12 @@ class About extends React.Component{
             <h1 className="text-4xl font-bold my-6"> ABOUT US Page</h1>
     
             <p> This is about us page. Created using a component.</p>
+
+            <UserContext.Consumer>
+               {({userInfo}) => (
+                   <h4 className="font-bold p-4 border m-8">{userInfo.name} - using context</h4>
+               )}
+            </UserContext.Consumer>
     
             <ProfileFunctionalComponent name={"Sunil"} sirname={"Mali"} />
     

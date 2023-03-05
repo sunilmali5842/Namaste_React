@@ -11,6 +11,7 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
+import UserContext from "./utils/UserContext";
 
 const About = lazy(() => import("./components/About"));
 
@@ -29,7 +30,11 @@ const Instamart = lazy(() => import("./components/Instamart") );
 
 const AppLayout = () =>{
 
-    const [user,setUser] = useState()
+    const [user,setUser] = useState({
+        name:'Sunil Mali',
+        email:'sunilmali5842@gmail.com',
+    });
+
     return (
         <>
         {
@@ -40,10 +45,14 @@ const AppLayout = () =>{
             */
            
         }
-        
+       <UserContext.Provider value={{
+           userInfo:user,
+           setUserInfo:setUser,
+           }}>
         <Header />
         <Outlet/>
         <Footer />
+        </UserContext.Provider> 
         </>
         
     );
