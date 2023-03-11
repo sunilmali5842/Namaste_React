@@ -1,0 +1,34 @@
+{
+  "name": "chapter-12-lets-build-our-store",
+  "version": "1.0.0",
+  "description": "Redux",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunilmali5842/Namaste_React.git"
+  },
+  "author": "Sunil Mali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunilmali5842/Namaste_React/issues"
+  },
+  "homepage": "https://github.com/sunilmali5842/Namaste_React#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "postcss": "^8.4.21",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.2.7"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.9.0"
+  }
+}
